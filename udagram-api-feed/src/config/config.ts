@@ -1,14 +1,14 @@
 export const config = {
-  'username': 'chirperadmin',
-  'password': 'postgres',
-  'database': 'chirperdb',
-  'host': 'wyr.cfjeibujcbd0.us-east-1.rds.amazonaws.com',
+  'username': process.env.POSTGRES_USERNAME,
+  'password': process.env.POSTGRES_PASSWORD,
+  'database': process.env.POSTGRES_DB,
+  'host': process.env.POSTGRES_HOST,
   'dialect': 'postgres',
-  'aws_region': 'us-east-1',
-  'aws_profile': 'default',
-  'aws_media_bucket': 'test-376262390406-dev',
-  'url': 'http://localhost:8100',
+  'aws_region': process.env.AWS_REGION,
+  'aws_profile': process.env.AWS_PROFILE,
+  'aws_media_bucket': process.env.AWS_BUCKET,
+  'url': process.env.URL,
   'jwt': {
-    'secret': 'hello',
+    'secret': process.env.JWT_SECRET,
   },
 };
