@@ -1,14 +1,14 @@
 export const config = {
-  'username': 'chirperadmin',
+  'username': '',
   'password': 'postgres',
-  'database': 'chirperdb',
-  'host': 'wyr.cfjeibujcbd0.us-east-1.rds.amazonaws.com',
+  'database': '',
+  'host': '',
   'dialect': 'postgres',
   'aws_region': 'us-east-1',
   'aws_profile': 'default',
-  'aws_media_bucket': 'test-376262390406-dev',
+  'aws_media_bucket': '',
   'url': 'http://localhost:8100',
   'jwt': {
-    'secret': 'hello',
+    'secret': '',
   },
 };
