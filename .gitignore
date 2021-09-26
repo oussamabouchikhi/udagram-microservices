@@ -1,1 +1,3 @@
 deployment/k8s/env-configmap.yaml
+
+set_env.sh
