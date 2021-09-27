@@ -21,11 +21,17 @@ To help review your infrastructure, please include the following screenshots in 
 kubectl get pods
 ```
 
+![kubernetes pods](kubernetes-pods.png)
+
 - To verify Kubernetes services are properly set up
 
 ```bash
 kubectl describe services
 ```
+
+![decribe services](kubernetes-describe-services.png)
+
+![get services](kubernetes-services.png)
 
 - To verify that you have horizontal scaling set against CPU usage
 
@@ -33,11 +39,15 @@ kubectl describe services
 kubectl describe hpa
 ```
 
+![kubernetes pods](kubernetes-hpa.png)
+
 - To verify that you have set up logging with a backend application
 
 ```bash
 kubectl logs {pod_name}
 ```
+
+![kubernetes pods](kubernetes-logs.png)
 
 ```bash
 # udagram-microservices\deployment\k8s
