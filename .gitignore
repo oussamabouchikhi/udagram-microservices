@@ -1,3 +1,6 @@
-deployment/k8s/env-configmap.yaml
+# env-configmap is where i have put my secrets
+# since it's just for demo, I will push it
+# to Github (which is a bad practise)
+#deployment/k8s/env-configmap.yaml
 
 set_env.sh
