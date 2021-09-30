@@ -8,6 +8,8 @@ services:
     depends_on:
       - udagram-users
       - udagram-feed
+    networks:
+      - example-net
   udagram-users:
     image: oussamabouchikhi/udagram-api-users
     volumes:
@@ -22,6 +24,8 @@ services:
       AWS_MEDIA_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: $URL
+      networks:
+        - example-net
   udagram-feed:
     image: oussamabouchikhi/udagram-api-feed
     volumes:
@@ -36,7 +40,14 @@ services:
       AWS_MEDIA_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: $URL
+    networks:
+      - example-net
   udagram-frontend:
     image: oussamabouchikhi/udagram-frontend
     ports:
       - '8100:80'
+    networks:
+      - example-net
+networks:
+  example-net:
+    external: true
