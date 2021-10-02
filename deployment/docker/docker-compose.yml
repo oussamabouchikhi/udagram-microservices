@@ -6,6 +6,7 @@ services:
       - 8080:8080
     restart: always
     depends_on:
+      - udagram-users
       - udagram-feed
   udagram-users:
     image: oussamabouchikhi/udagram-api-users
