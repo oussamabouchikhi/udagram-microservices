@@ -1,11 +1,12 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+const reverseproxyExternalIP = 'a869df12df0b647019e888f368af9705-1929115378.us-east-1.elb.amazonaws.com'
 
 export const environment = {
   production: false,
   appName: 'Udagram',
-  apiHost: 'http://localhost:8080/api/v0'
+  apiHost: `http://${reverseproxyExternalIP}:8080/api/v0`
 };
 
 /*
