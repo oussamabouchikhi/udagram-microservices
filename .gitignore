@@ -1,6 +1,6 @@
-# env-configmap is where i have put my secrets
-# since it's just for demo, I will push it
-# to Github (which is a bad practise)
-#deployment/k8s/env-configmap.yaml
+deployment/k8s/env-configmap.yaml
+deployment/k8s/env-secret.yaml
+deployment/k8s/aws-secret.yaml
+
 
 set_env.sh

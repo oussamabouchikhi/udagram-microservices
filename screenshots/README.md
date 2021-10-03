@@ -31,8 +31,6 @@ kubectl describe services
 
 ![decribe services](kubernetes-describe-services.png)
 
-![get services](kubernetes-services.png)
-
 - To verify that you have horizontal scaling set against CPU usage
 
 ```bash
@@ -50,7 +48,20 @@ kubectl logs {pod_name}
 ![kubernetes pods](kubernetes-logs.png)
 
 ```bash
+# Rename secret files & edit credentials
+mv example.env-configmap.yaml env-configmap.yaml
+mv example.env-secret.yaml env-secret.yaml
+mv example.aws-secret.yaml aws-secret.yaml
+
+# Deploy credentials files to kubernetes(eks)
+kubectl  apply -f env-configmap.yaml
+kubectl  apply -f env-secret.yaml
+kubectl  apply -f aws-secret.yaml
+
+
 # udagram-microservices\deployment\k8s
+kubectl  apply -f backend-feed-deployment.yaml
+
 kubectl  apply -f backend-feed-deployment.yaml
 kubectl  apply -f backend-feed-service.yaml
 
@@ -60,6 +71,8 @@ kubectl  apply -f backend-user-service.yaml
 kubectl  apply -f frontend-deployment.yaml
 kubectl  apply -f frontend-service.yaml
 
+# Since reverseproxy_deployment depends on users and feed
+# make sure to deploy it at the end
 kubectl  apply -f reverseproxy_deployment.yaml
 kubectl  apply -f reverseproxy_service.yaml
 
